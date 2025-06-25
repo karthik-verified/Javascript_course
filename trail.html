@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" class="input" placeholder="Todo name" autocomplete="on" onkeydown="
+            if(event.key === 'Enter') {
+                add_todo_things();
+                console.log(todo_array);
+                document.querySelector('.input').value = '';
+            }
+        ">
+    <button onclick="
+        add_todo_things();
+        console.log(todo_array);
+        document.querySelector('.input').value = '';
+    ">Add</button>
+    <script>
+        let todo_array = [];
+        function add_todo_things() {
+            todo_array.push(document.querySelector('.input').value);
+        };
+    </script>
+</body>
+</html>

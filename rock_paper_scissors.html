@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Rock Paper Scissors</h2>
+    <button onclick="
+        const rock_our_pick='Rock';
+        let rock_answer='Rock';
+        let rock_result='Win';
+        const rock_computer=Math.random();
+        if (rock_computer>=0 && rock_computer<1/3){
+            rock_answer='Rock';
+            console.log('Rock');
+        }
+        else if (rock_computer>1/3 && rock_computer<2/3){
+            rock_answer='Paper';
+            console.log('Paper');
+            
+        }
+        else if (rock_computer>2/3 && rock_computer<1){
+            rock_answer='Scissors';
+            console.log('Scissors');
+        }
+
+        if (rock_answer==='Paper'){
+            rock_result='Loss';
+            console.log('You lose');
+        } else if (rock_answer==='Scissors') {
+            rock_result='Win';
+            console.log('You win');
+        } else {
+            rock_result='Tie'
+            console.log('Tie')
+        }
+
+        alert(`You picked Rock while the computer has picked ${rock_answer} and the result is a ${rock_result}`)
+    ">Rock</button>
+
+    <button onclick="
+        const paper_our_pick='Paper';
+        let paper_answer='Rock';
+        let paper_result='Win';
+        const paper_computer=Math.random();
+        if (paper_computer>=0 && paper_computer<1/3){
+            paper_answer='Rock';
+            console.log('Rock');
+        }
+        else if (paper_computer>1/3 && paper_computer<2/3){
+            paper_answer='Paper';
+            console.log('Paper');
+            
+        }
+        else if (paper_computer>2/3 && paper_computer<1){
+            paper_answer='Scissors';
+            console.log('Scissors');
+        }
+
+        if (paper_answer==='Scissors'){
+            paper_result='Loss';
+            console.log('You lose');
+        } else if (paper_answer==='Rock') {
+            paper_result='Win';
+            console.log('You win');
+        } else {
+            paper_result='Tie'
+            console.log('Tie')
+        }
+
+        alert(`You picked Paper while the computer has picked ${paper_answer} and the result is a ${paper_result}`)
+    ">Paper</button>
+
+    <button onclick="
+        const scissors_our_pick='Rock';
+        let scissors_answer='Rock';
+        let scissors_result='Win';
+        const scissors_computer=Math.random();
+        if (scissors_computer>=0 && scissors_computer<1/3){
+            scissors_answer='Rock';
+            console.log('Rock');
+        }
+        else if (scissors_computer>1/3 && scissors_computer<2/3){
+            scissors_answer='Paper';
+            console.log('Paper');
+            
+        }
+        else if (scissors_computer>2/3 && scissors_computer<1){
+            scissors_answer='Scissors';
+            console.log('Scissors');
+        }
+
+        if (scissors_answer==='Rock'){
+            scissors_result='Loss';
+            console.log('You lose');
+        } else if (scissors_answer==='Paper') {
+            scissors_result='Win';
+            console.log('You win');
+        } else {
+            scissors_result='Tie'
+            console.log('Tie')
+        }
+
+        alert(`You picked Scissors while the computer has picked ${scissors_answer} and the result is a ${scissors_result}`)
+    ">Scissors</button>
+    <button onclick="
+
+    ">Reset Button</button>
+
+    <script>
+         let score_manager = {
+            win:0,
+            loss:0,
+            tie:0
+         }
+         
+    </script>
+</body>
+</html>

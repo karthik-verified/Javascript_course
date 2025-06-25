@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .cost_input {
+            font-size: 15px;
+            padding: 10.5px;
+        }
+        .calculate_button {
+            background-color: green;
+            color: white;
+            font-size: 15px;
+            border: none;
+            padding-top: 12px;
+            padding-bottom: 12px;
+            padding-left: 15px;
+            padding-right: 15px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h2>Amazon shipping Calculator</h2>
+    <p>Orders under $40 = +$10 shipping</p>
+    <p>Orders over $40 = FREE shipping</p>
+    <section>
+         <input type="text" placeholder="Cost of order" class="cost_input"
+    onkeydown="
+        
+        if(event.key==='Enter') {
+             let amount = document.querySelector('.cost_input').value ;
+            amount = Number(amount);
+            let final_amount = calculate(amount);
+            document.querySelector('.output').innerHTML = `The calculated amount for the delivery including shipping charges (if eligible) is $${final_amount} `;
+        }
+    ">
+    <button onclick="
+        
+        let amount = document.querySelector('.cost_input').value ;
+        amount = Number(amount);
+        if (amount) {
+            let final_amount = calculate(amount);
+            document.querySelector('.output').innerHTML = `The calculated amount for the delivery including shipping charges (if eligible) is $${final_amount} `;
+        }
+    " class="calculate_button"> Calculate</button>
+    </section>
+    <p class="output"></p>
+    <script>
+        
+ 
+
+        function calculate(amount) {
+            if (amount<40) {
+                amount =  amount + 10;
+            }
+            return amount;
+        }
+
+        
+    </script>
+</body>
+</html>

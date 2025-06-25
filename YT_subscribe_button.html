@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            gap: 2rem
+            ;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: radial-gradient(yellow,crimson);
+        }
+        .before_click {
+            background-color: black;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 50px;
+            font-weight: bold;
+            cursor: pointer;
+            
+        }
+        .after_click {
+            background-color: rgb(240,240,240);
+            color: black;
+            transform: rotate(360deg) rotateX(360deg) rotateY(360deg);
+            transition-property: transform;
+            transition-duration: 2s;
+            
+            
+        }
+    </style>
+</head>
+<body>
+    <h2>YouTube Subscribe button</h2>
+    <button class="before_click" onclick="
+        let content = document.querySelector('button');
+        if(content.innerHTML==='Subscribe') {
+            content.innerHTML = 'Subscribed';
+            content.classList.add('after_click');
+        }else if (content.innerHTML==='Subscribed') {
+            content.innerHTML = 'Subscribe';
+            content.classList.remove('after_click')
+        }
+    ">Subscribe</button>
+</body>
+</html>

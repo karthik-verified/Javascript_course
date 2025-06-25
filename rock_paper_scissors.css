@@ -1,0 +1,50 @@
+* {
+            box-sizing: border-box;
+        }
+        body {
+            background-color: rgb(25,25,25);
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            padding-left: 10rem;
+            padding-top: 3rem;
+        }
+        .Rock {
+            height: 150px;
+            width: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+            
+            background-color: black;
+        }
+        .Paper {
+            height: 150px;
+            width: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+            
+            background-color: black;
+        }
+        .Scissors {
+            height: 150px;
+            width: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+           
+            background-color: black;
+        }
+        .buttons {
+            border-radius: 50%;
+            border: 5px  double white;
+            overflow: visible;
+            cursor: pointer;
+        }
+        .box {
+            display: flex;
+            gap: 1rem;
+        }
