@@ -11,18 +11,37 @@
                 add_todo_things();
                 console.log(todo_array);
                 document.querySelector('.input').value = '';
+                
+                
             }
         ">
     <button onclick="
         add_todo_things();
         console.log(todo_array);
         document.querySelector('.input').value = '';
+        
+
     ">Add</button>
+
+    <section class="onpage"></section>
     <script>
-        let todo_array = [];
+        let todo_array = [' '];
+        
+        function render() {
+            let total_elements = ``;
+            for(let i = 0; i<todo_array.length ; i++) {
+                const todo = todo_array[i];
+                const html = `<p>${todo}</p>`;
+                total_elements += html;
+            }
+            document.querySelector('.onpage').innerHTML = total_elements;
+        }
+        
         function add_todo_things() {
             todo_array.push(document.querySelector('.input').value);
+            render();
         };
+        
     </script>
 </body>
-</html>
+</html> 
