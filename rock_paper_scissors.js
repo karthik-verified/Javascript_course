@@ -48,6 +48,19 @@
             }
             return comp_choice;
         }
+
+        function human_choice_generator() {
+            const number = Math.random();
+            let human_choice = 'rock';
+            if (number>0 && number<1/3) {
+                human_choice = 'Rock';
+            } else if(number>1/3 && number<2/3) {
+                human_choice = 'Paper';
+            } else {
+                human_choice = 'Scissors';
+            }
+            return human_choice;
+        }
         
         function win_checker(user_choice,comp_choice) {
             let result = 'Win'
@@ -83,6 +96,24 @@
         }
         
 
-      function update_score() {
-        document.querySelector('.js-score').innerHTML = `Wins : ${counter.wins} , Losses : ${counter.losses} , Ties : ${counter.tie}`;
-      }
+        function update_score() {
+            document.querySelector('.js-score').innerHTML = `Wins : ${counter.wins} , Losses : ${counter.losses} , Ties : ${counter.tie}`;
+        }
+
+        let autoPlayInterval;
+
+        function auto_play() {
+        if (autoPlayInterval) return; // Prevent multiple intervals
+
+        autoPlayInterval = setInterval(function() {
+            const user_choice = human_choice_generator();
+            const comp_choice = comp_choice_generator();
+            const result = win_checker(user_choice, comp_choice);
+            
+            win_counter(result);
+            localStorage.setItem('score', JSON.stringify(counter));
+            update_score();
+            game_result(result);
+            chosen_moves(user_choice, comp_choice);
+        }, 2000);
+        }

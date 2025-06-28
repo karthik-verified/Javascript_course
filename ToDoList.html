@@ -15,6 +15,7 @@
                 
             }
         ">
+    <input type="date" class="date">
     <button onclick="
         add_todo_things();
         console.log(todo_array);
@@ -25,20 +26,32 @@
 
     <section class="onpage"></section>
     <script>
-        let todo_array = [''];
+        let todo_array = [{
+            todo_item : '',
+            due_date : ''
+        }];
         
         function render() {
             let total_elements = ``;
             for(let i = 0; i<todo_array.length ; i++) {
-                const todo = todo_array[i];
-                const html = `<p>${todo}</p>`;
+                const todo = todo_array[i].todo_item;
+                const due = todo_array[i].due_date;
+                const html = 
+                `<div> 
+                    ${todo} &nbsp;${due}
+                    <button onclick="
+                    todo_array.splice(${i},1);
+                    render();
+                 ">Delete</button>
+                 </div><br> `;
                 total_elements += html;
             }
             document.querySelector('.onpage').innerHTML = total_elements;
         }
         
         function add_todo_things() {
-            todo_array.push(document.querySelector('.input').value);
+            todo_array.push( { todo_item : document.querySelector('.input').value,
+            due_date : document.querySelector('.date').value});
             render();
         };
         
