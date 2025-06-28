@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button class="button" onclick="
+            let content = document.querySelector('.button')
+            if (content.innerHTML==='Start') {
+                document.querySelector('.button').innerHTML = `...Loading`;
+                setTimeout(function() {
+                    document.querySelector('.button').innerHTML = `Finished`;
+                },2000);
+            } else if(content.innerHTML==='Finished') {
+                document.querySelector('.button').innerHTML = `...Resetting`;
+                setTimeout(function() {
+                    document.querySelector('.button').innerHTML = `Start`;
+                },2000);
+            }
+        ">Start</button>
+</body>
+</html>
