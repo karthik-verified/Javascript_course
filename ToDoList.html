@@ -6,55 +6,49 @@
     <title>Document</title>
 </head>
 <body>
-    <input type="text" class="input" placeholder="Todo name" autocomplete="on" onkeydown="
-            if(event.key === 'Enter') {
-                add_todo_things();
-                console.log(todo_array);
-                document.querySelector('.input').value = '';
-                
-                
-            }
-        ">
-    <input type="date" class="date">
-    <button onclick="
-        add_todo_things();
-        console.log(todo_array);
-        document.querySelector('.input').value = '';
-        
 
+    <input  class="input" type="text" placeholder="enter your chore " autocomplete="on" onkeydown="
+            if(event.key==='Enter') {
+               add_to_array();
+               render(); 
+               document.querySelector('.input').value = '';
+            }
+            
+        ">
+    <input class="input-date" type="date" placeholder="select date" autocomplete="on">
+    <button onclick="
+        add_to_array();
+        render();
+        document.querySelector('.input').value = '';
     ">Add</button>
 
-    <section class="onpage"></section>
+    <section class="display"></section>
+
     <script>
-        let todo_array = [{
-            todo_item : '',
-            due_date : ''
-        }];
-        
-        function render() {
-            let total_elements = ``;
-            for(let i = 0; i<todo_array.length ; i++) {
-                const todo = todo_array[i].todo_item;
-                const due = todo_array[i].due_date;
-                const html = 
-                `<div> 
-                    ${todo} &nbsp;${due}
-                    <button onclick="
-                    todo_array.splice(${i},1);
-                    render();
-                 ">Delete</button>
-                 </div><br> `;
-                total_elements += html;
-            }
-            document.querySelector('.onpage').innerHTML = total_elements;
+        let todo_array = [];
+        function add_to_array () {
+            let todo_item = document.querySelector('.input').value;
+            let due_date = document.querySelector('.input-date').value;
+            todo_array.push({
+                todo_item : todo_item,
+                due_date : due_date
+            });
         }
-        
-        function add_todo_things() {
-            todo_array.push( { todo_item : document.querySelector('.input').value,
-            due_date : document.querySelector('.date').value});
-            render();
-        };
-        
+       
+        function render() {
+            
+            let html = ''; 
+            for(let i = 0; i<todo_array.length ;i++) {
+                 html += `<p>${todo_array[i].todo_item}&nbsp ${todo_array[i].due_date}
+                    <button onclick = "
+                        todo_array.splice(${i},1);
+                        render();
+                    ">
+                    Delete
+                    </button></p>`;
+            }
+            document.querySelector('.display').innerHTML = html;
+        }
     </script>
 </body>
-</html> 
+</html>

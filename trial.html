@@ -6,10 +6,49 @@
     <title>Document</title>
 </head>
 <body>
+
+    <input  class="input" type="text" placeholder="enter your chore " autocomplete="on" onkeydown="
+            if(event.key==='Enter') {
+               add_to_array();
+               render(); 
+               document.querySelector('.input').value = '';
+            }
+            
+        ">
+    <input class="input-date" type="date" placeholder="select date" autocomplete="on">
+    <button onclick="
+        add_to_array();
+        render();
+        document.querySelector('.input').value = '';
+    ">Add</button>
+
+    <section class="display"></section>
+
     <script>
-        setTimeout(function() {
-            console.log('timeout')
-        },3000);
+        let todo_array = [];
+        function add_to_array () {
+            let todo_item = document.querySelector('.input').value;
+            let due_date = document.querySelector('.input-date').value;
+            todo_array.push({
+                todo_item : todo_item,
+                due_date : due_date
+            });
+        }
+       
+        function render() {
+            
+            let html = ''; 
+            for(let i = 0; i<todo_array.length ;i++) {
+                 html += `<p>${todo_array[i].todo_item}&nbsp ${todo_array[i].due_date}
+                    <button onclick = "
+                        todo_array.splice(${i},1);
+                        render();
+                    ">
+                    Delete
+                    </button></p>`;
+            }
+            document.querySelector('.display').innerHTML = html;
+        }
     </script>
 </body>
 </html>

@@ -101,19 +101,27 @@
         }
 
         let autoPlayInterval;
-
+        let is_playing = false;
+        
         function auto_play() {
-        if (autoPlayInterval) return; // Prevent multiple intervals
+            if (!is_playing) {
+                if (autoPlayInterval) return; // Prevent multiple intervals
 
-        autoPlayInterval = setInterval(function() {
-            const user_choice = human_choice_generator();
-            const comp_choice = comp_choice_generator();
-            const result = win_checker(user_choice, comp_choice);
+                autoPlayInterval = setInterval(function() {
+                    const user_choice = comp_choice_generator();
+                    const comp_choice = comp_choice_generator();
+                    const result = win_checker(user_choice, comp_choice);
+                    
+                    win_counter(result);
+                    localStorage.setItem('score', JSON.stringify(counter));
+                    update_score();
+                    game_result(result);
+                    chosen_moves(user_choice, comp_choice);
+                }, 1000);
+                is_playing = true;
+            } else {
+                clearInterval(autoPlayInterval);
+                is_playing = false;
+            }
             
-            win_counter(result);
-            localStorage.setItem('score', JSON.stringify(counter));
-            update_score();
-            game_result(result);
-            chosen_moves(user_choice, comp_choice);
-        }, 2000);
         }
