@@ -9,57 +9,26 @@
 <body>
     <h2>Rock Paper Scissors</h2>
     <section class="box">
-        <button class=" buttons Rock" onclick="
-       let comp_choice = comp_choice_generator();
-        user_choice = 'Rock';
-        let result = win_checker(user_choice,comp_choice);
 
-          win_counter(result);
-          localStorage.setItem('score',JSON.stringify(counter));
-          update_score();
-          game_result(result);
-          chosen_moves(user_choice,comp_choice);
-        
-       
+        <button class=" buttons Rock js_button_rock">
+            <figure class="rock-emoji">
+            <img  src="rock-emoji.png" alt="Rock image" height="100px" width="100px">
+            </figure>
+        </button>
 
 
-    "><figure class="rock-emoji">
-        <img  src="rock-emoji.png" alt="Rock image" height="100px" width="100px">
-    </figure></button>
-    <button  class=" buttons Paper" onclick="
-          let comp_choice = comp_choice_generator();
-        user_choice = 'Paper';
-        let result = win_checker(user_choice,comp_choice);
-
-          win_counter(result);
-          localStorage.setItem('score',JSON.stringify(counter));
-          update_score();
-          game_result(result);
-          chosen_moves(user_choice,comp_choice);
-              
-             
-
-    "><figure>
-        <img src="paper-emoji.png" alt="Paper image" height="100px" width="100px">
-    </figure></button>
-    <button  class=" buttons Scissors" onclick="
-          let comp_choice = comp_choice_generator();
-        user_choice = 'Scissors';
-        let result = win_checker(user_choice,comp_choice); 
-
-          win_counter(result);
-          localStorage.setItem('score',JSON.stringify(counter));
-          update_score();
-          game_result(result);
-          chosen_moves(user_choice,comp_choice);
-
-        
+        <button  class=" buttons Paper js_button_paper">
+            <figure>
+            <img src="paper-emoji.png" alt="Paper image" height="100px" width="100px">
+            </figure>
+        </button>
 
 
-    "><figure>
-        <img src="scissors-emoji.png" alt="Paper image" height="100px" width="100px">
-    </figure>
-</button>
+        <button  class=" buttons Scissors js_button_scissors" 
+        >   <figure>
+                <img src="scissors-emoji.png" alt="Paper image" height="100px" width="100px">
+            </figure>
+        </button>
 
     </section>
 

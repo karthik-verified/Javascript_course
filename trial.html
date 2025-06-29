@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button class="js_button">Click</button>
+    <script>
+        let js_button = document.querySelector('.js_button');
+
+       let clicking_function = function() {
+            console.log('button has been finally clicked !');
+        }
+        js_button.addEventListener('click', clicking_function);
+
+        
+    </script>
+</body>
+</html>

@@ -125,3 +125,45 @@
             }
             
         }
+
+        let js_button_rock  = document.querySelector('.js_button_rock');
+
+        js_button_rock.addEventListener('click',function(){
+            let comp_choice = comp_choice_generator();
+            user_choice = 'Rock';
+            let result = win_checker(user_choice,comp_choice);
+
+            win_counter(result);
+            localStorage.setItem('score',JSON.stringify(counter));
+            update_score();
+            game_result(result);
+            chosen_moves(user_choice,comp_choice);
+        })
+
+        let js_button_paper = document.querySelector('.js_button_paper');
+
+        js_button_paper.addEventListener('click', function() {
+            let comp_choice = comp_choice_generator();
+            user_choice = 'Paper';
+            let result = win_checker(user_choice,comp_choice);
+
+            win_counter(result);
+            localStorage.setItem('score',JSON.stringify(counter));
+            update_score();
+            game_result(result);
+            chosen_moves(user_choice,comp_choice);
+        })
+
+        let js_button_scissors = document.querySelector('.js_button_scissors');
+
+        js_button_scissors.addEventListener('click' , function() {
+            let comp_choice = comp_choice_generator();
+            user_choice = 'Scissors';
+            let result = win_checker(user_choice,comp_choice); 
+
+            win_counter(result);
+            localStorage.setItem('score',JSON.stringify(counter));
+            update_score();
+            game_result(result);
+            chosen_moves(user_choice,comp_choice);
+        })
