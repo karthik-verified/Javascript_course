@@ -138,7 +138,7 @@
             update_score();
             game_result(result);
             chosen_moves(user_choice,comp_choice);
-        })
+        });
 
         let js_button_paper = document.querySelector('.js_button_paper');
 
@@ -152,7 +152,7 @@
             update_score();
             game_result(result);
             chosen_moves(user_choice,comp_choice);
-        })
+        });
 
         let js_button_scissors = document.querySelector('.js_button_scissors');
 
@@ -166,4 +166,38 @@
             update_score();
             game_result(result);
             chosen_moves(user_choice,comp_choice);
+        });
+
+        document.body.addEventListener('keydown', function(event) {
+            if(event.key==='r') {
+                let comp_choice = comp_choice_generator();
+                user_choice = 'Rock';
+                let result = win_checker(user_choice,comp_choice);
+
+                win_counter(result);
+                localStorage.setItem('score',JSON.stringify(counter));
+                update_score();
+                game_result(result);
+                chosen_moves(user_choice,comp_choice);
+            } else if(event.key==='p') {
+                let comp_choice = comp_choice_generator();
+                user_choice = 'Paper';
+                let result = win_checker(user_choice,comp_choice);
+
+                win_counter(result);
+                localStorage.setItem('score',JSON.stringify(counter));
+                update_score();
+                game_result(result);
+                chosen_moves(user_choice,comp_choice);
+            }else if (event.key==='s') {
+                let comp_choice = comp_choice_generator();
+                user_choice = 'Scissors';
+                let result = win_checker(user_choice,comp_choice); 
+
+                win_counter(result);
+                localStorage.setItem('score',JSON.stringify(counter));
+                update_score();
+                game_result(result);
+                chosen_moves(user_choice,comp_choice);
+            }
         })
