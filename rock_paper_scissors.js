@@ -201,3 +201,16 @@
                 chosen_moves(user_choice,comp_choice);
             }
         })
+
+        let entered = true;
+        document.body.addEventListener('keydown', function(event) {
+            if(event.key==='c') {
+                if(entered){
+                document.body.classList.add('after_entered');
+                entered = false;
+                }else {
+                    document.body.classList.remove('after_entered');
+                    entered = true;
+                }
+            }
+        })

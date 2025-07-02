@@ -48,6 +48,7 @@
             display: flex;
             gap: 1rem;
         }
-        .auto_play_button {
-            
+        
+        .after_entered {
+            background-color: orangered;
         }
