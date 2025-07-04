@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background-color: violet;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content-button {
+    font-size: 2rem;
+    color: black;
+    height: 80px;
+    width: 140px;
+    border: 2px black solid;
+}
+
+.content-button:hover {
+    background-color: rgb(210, 199, 199);
+    transition-property: background-color;
+    transition-duration: 1s;
+}
