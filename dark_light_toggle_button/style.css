@@ -1,0 +1,57 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    transition-property: background-color;
+    transition-duration: 1s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body.dark_mode_on {
+    background-color: black;
+}
+
+body.light_mode_on {
+    background-color: gray;
+    
+}
+.button_area {
+    border: 2px double white;
+    padding-right: 2px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 80px;
+    height: 40px;
+    background-color: white;
+    border-top-left-radius: 100px;
+    border-bottom-left-radius: 100px;
+    border-top-right-radius: 100px;
+    border-bottom-right-radius: 100px;
+}
+
+
+
+.js-button {
+    cursor: pointer;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background-color: black;
+    border: none;
+    transition-property: transform, background-color;
+    transition-duration: 1s;
+}
+
+
+
+body.light_mode_on .js-button {
+    transform: translateX(-42px);
+    background-color: gray ;
+}
