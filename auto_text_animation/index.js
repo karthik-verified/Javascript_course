@@ -2,7 +2,8 @@ const content = ['Developer','Coder','Reader','Detective','Gamer'];
 
 let totalDelay = 0;
 
-content.forEach(function(item) {
+for(let i = 0; i<=100 ; i++) {
+    content.forEach(function(item) {
     let html ='';
     for(let i = 0; i<item.length ; i++) {
         totalDelay += 165;
@@ -18,3 +19,4 @@ content.forEach(function(item) {
         document.querySelector('.content'),innerHTML = '';
     },totalDelay);
 });
+}
